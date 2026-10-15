@@ -1,7 +1,19 @@
-// Função para interagir com o usuário
-function mostrarMensagem() {
-    alert("Obrigado pelo interesse! Juntos, podemos construir uma agricultura muito mais verde e sustentável. Continue navegando para saber como!");
-}// Função para interagir com o usuário
-function mostrarMensagem() {
-    alert("Obrigado pelo interesse! Juntos, podemos construir uma agricultura muito mais verde e sustentável. Continue navegando para saber como!");
-}
+const botoes = document.querySelectorAll("button");
+
+botoes.forEach(function (botao) {
+    let curtiu = false;
+    botao.addEventListener("click", botaoClicado);
+
+    function botaoClicado() {
+        let texto = botao.querySelector("span");
+
+        if (curtiu === false) {
+            texto.textContent++;
+            curtiu = true;
+        } else {
+            texto.textContent--;
+            curtiu = false;
+        }
+    }
+});
+
